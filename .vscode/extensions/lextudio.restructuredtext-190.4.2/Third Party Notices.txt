@@ -1,0 +1,33 @@
+This file is based on or incorporates material from the projects listed below
+(Third Party IP). The original copyright notice and the license under which
+LeXtudio Inc. received such Third Party IP, are set forth below. Such licenses and
+notices are provided for informational purposes only. LeXtudio Inc. licenses the
+Third Party IP to you under the licensing terms for the product. LeXtudio Inc.
+reserves all other rights not expressly granted under this agreement, whether
+by implication, estoppel or otherwise.
+
+---
+
+ruby-linter
+
+The license terms can be found at
+
+https://github.com/hoovercj/vscode-ruby-linter/blob/master/LICENSE.txt
+
+Visual Studio Code
+
+The license terms can be found at
+
+https://github.com/Microsoft/vscode/blob/master/LICENSE.txt
+
+vscode-markdown
+
+The license terms can be found at
+
+https://github.com/yzhang-gh/vscode-markdown/blob/master/LICENSE
+
+resttext
+
+The license terms can be found at
+
+https://github.com/TatsuyaNakamori/vscode-reStructuredText/blob/master/LICENSE
