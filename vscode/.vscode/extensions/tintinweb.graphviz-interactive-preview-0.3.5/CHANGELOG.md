@@ -1,0 +1,170 @@
+# Change Log
+
+## 0.3.5
+- new: show preview for node shapes - [#137](https://github.com/tintinweb/vscode-interactive-graphviz/issues/137)
+  - Note: to enable, wait for the suggestion box to appear and click on the `>` to expand the preview
+
+![node-shape-preview](https://user-images.githubusercontent.com/27259/197874676-2f0d502e-622d-4cd5-87da-f0deea744d8c.png)
+- update: dependencies
+
+## 0.3.4
+- fix: A bug could lead to the web view crashing when another extension created a DOT document (with automatically open enabled) and then executes the preview command - [#138](https://github.com/tintinweb/vscode-interactive-graphviz/issues/138)
+
+## 0.3.3
+- update: API - Allow caller to define view options (preserveFocus, vieColumn) - [#132](https://github.com/tintinweb/vscode-interactive-graphviz/issues/132)
+- fix: "openAutomatically" creates a new URI object. When revealing the graph for an already rendered `.dot` file the extension would open another render view because the lookup if the panel already exists fails as `vscode.URI` objects are not singletons (`new vscode.Uri("hi") != new vscode.Uri("hi")`. in order to fix this we now index `vscode.Uri.toString()` in the `URI -> panelObject` mapping. - [#131](https://github.com/tintinweb/vscode-interactive-graphviz/issues/131) [#132](https://github.com/tintinweb/vscode-interactive-graphviz/issues/132)
+- update: dependencies
+
+## 0.3.2
+
+- new: Added option for not focusing on the newly created preview (focus stays on the editor) (default: `true`, setting: `graphviz-interactive-preview.preserveFocus`) - [#125](https://github.com/tintinweb/vscode-interactive-graphviz/issues/125)
+- new: Automatically open the preview when opening files with the DOT-Language (default: `true`, setting: `graphviz-interactive-preview.openAutomatically`) - [#122](https://github.com/tintinweb/vscode-interactive-graphviz/issues/122)
+- new: Added (experimental) configuration option to use VSCode's Theme Colors (default: `false`, setting: `graphviz-interactive-preview.view.themeColors`) - [#72](https://github.com/tintinweb/vscode-interactive-graphviz/issues/72) [#120](https://github.com/tintinweb/vscode-interactive-graphviz/issues/120)
+- new: given an URI and no content the content is read from the URI - [#119](https://github.com/tintinweb/vscode-interactive-graphviz/issues/119)
+- fix: Also Dim Node Background color - [#115](https://github.com/tintinweb/vscode-interactive-graphviz/issues/115)
+- update: dependencies
+
+## 0.3.1
+
+- new: Switch to URI identification instead of document identification. Improves API. - [#114](https://github.com/tintinweb/vscode-interactive-graphviz/issues/114)
+- fix: Introduce condense formatting option - [#111](https://github.com/tintinweb/vscode-interactive-graphviz/issues/111)
+- update: dependencies
+
+## 0.3.0
+
+- new: Outline View now shows an outline of the graph file. (using a parser lib with a fallback to regex symbol extraction under the hood) - [#97](https://github.com/tintinweb/vscode-interactive-graphviz/issues/97)
+
+<img width="794" alt="image" src="https://user-images.githubusercontent.com/2865694/167640865-43d7caaf-4976-42ee-8f28-9748bda5a5e6.png">
+
+- new: Auto Formatting for dot files - [#99](https://github.com/tintinweb/vscode-interactive-graphviz/issues/99)
+  - <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>: `Format Document`
+
+<img width="527" alt="image" src="https://user-images.githubusercontent.com/2865694/167641010-7c571b80-4dca-4298-b7b1-15e1d29f4597.png">
+
+
+
+## 0.2.1
+
+- new: Symbols, Rename and References (fixes [#79](https://github.com/tintinweb/vscode-interactive-graphviz/issues/79)) - [#94](https://github.com/tintinweb/vscode-interactive-graphviz/issues/94)
+  - suggest proper symbols (Press `Ctrl+P` and afterwards enter `@`)
+
+<img width="756" alt="Screenshot 2022-04-13 at 23 36 20" src="https://user-images.githubusercontent.com/27259/163274489-6bc4627e-f545-47f1-a674-a7b551583d34.png">
+
+  - renaming
+
+<img width="390" alt="Screenshot 2022-04-13 at 23 38 42" src="https://user-images.githubusercontent.com/27259/163274816-7a49ff59-c4a5-4d35-92b6-7958b32cad7b.png">
+
+  - references
+
+<img width="666" alt="Screenshot 2022-04-13 at 23 40 07" src="https://user-images.githubusercontent.com/27259/163274997-6e696418-c9de-4fa8-800d-fbf0bee2e7de.png">
+
+- new: Improved toolbar styling for different themes - [#100](https://github.com/tintinweb/vscode-interactive-graphviz/issues/100)
+
+<img width="674" alt="Screenshot 2022-04-15 at 12 07 57" src="https://user-images.githubusercontent.com/27259/163558499-d2c552e6-2b07-4299-8f5d-53dca9361a84.png">
+
+<img width="674" alt="Screenshot 2022-04-15 at 12 09 06" src="https://user-images.githubusercontent.com/27259/163558623-117ce7de-9c99-4c2e-8613-32af1d05df6f.png">
+
+<img width="674" alt="Screenshot 2022-04-15 at 12 08 43" src="https://user-images.githubusercontent.com/27259/163558637-e9074a64-15cb-4970-aca5-b59287cbdd76.png">
+
+- fix: Keep search bar while rendering - [#102](https://github.com/tintinweb/vscode-interactive-graphviz/issues/102) fixes [#101](https://github.com/tintinweb/vscode-interactive-graphviz/issues/101)
+
+- update: Documentation information on Hover and on CodeCompletion have been harmonised - [#103](https://github.com/tintinweb/vscode-interactive-graphviz/issues/103)
+
+
+## 0.2.0
+
+- new: Implements Selection of Render Engine - [#85](https://github.com/tintinweb/vscode-interactive-graphviz/issues/85) fixes [#69](https://github.com/tintinweb/vscode-interactive-graphviz/issues/69)
+
+<img width="576" alt="Screenshot 2022-03-31 at 22 46 36" src="https://user-images.githubusercontent.com/27259/161146471-6fb269df-5e3a-4f71-ab6e-37391b33c09c.png">
+
+- new: Provide color decorator - [#86](https://github.com/tintinweb/vscode-interactive-graphviz/issues/86) fixes [#77](https://github.com/tintinweb/vscode-interactive-graphviz/issues/77)
+
+<img width="472" alt="image" src="https://user-images.githubusercontent.com/2865694/163130099-30227a10-e471-4fe0-9564-1d3338f09726.png">
+
+- new: Hover Information -  [#88](https://github.com/tintinweb/vscode-interactive-graphviz/issues/88) fixes [#76](https://github.com/tintinweb/vscode-interactive-graphviz/issues/76)
+
+<img width="303" alt="Screenshot 2022-04-01 at 13 05 39" src="https://user-images.githubusercontent.com/27259/161251962-6aa3792c-70da-4f48-a9fa-5933012fede2.png">
+
+- fix: Clicking on the background brings it to foreground, covering the nodes - [#90](https://github.com/tintinweb/vscode-interactive-graphviz/issues/90) fixes [#70](https://github.com/tintinweb/vscode-interactive-graphviz/issues/70)
+
+- new: Show Diagnostic errors in the editor's "Problems" view - [#89](https://github.com/tintinweb/vscode-interactive-graphviz/issues/89) fixes [#75](https://github.com/tintinweb/vscode-interactive-graphviz/issues/75)
+
+<img width="576" alt="image" src="https://user-images.githubusercontent.com/2865694/163143275-05f0547b-ce69-43ce-af66-ed76b1f7aa88.png">
+
+- new: Improved CompletionProvider - [#91](https://github.com/tintinweb/vscode-interactive-graphviz/issues/91)
+- update: Webview UI toolkit updated to 1.0.0 [#92](https://github.com/tintinweb/vscode-interactive-graphviz/issues/92)
+
+## 0.1.2
+- new: active editor window: context menu -> Preview Graphviz / DOT (beside) - [#67](https://github.com/tintinweb/vscode-interactive-graphviz/issues/67)
+
+<img width="517" alt="image" src="https://user-images.githubusercontent.com/2865694/154029863-7d7dd582-2b9a-480c-b0de-bcccb9136ae4.png">
+
+- new: button for editor title - [#67](https://github.com/tintinweb/vscode-interactive-graphviz/issues/67)
+
+<img width="496" alt="image" src="https://user-images.githubusercontent.com/27259/154139064-d1966c0b-afb5-4f71-beb1-1792ed3b6e8b.png">
+
+
+## 0.1.1
+- new: the extension now bundles dot language support, syntax highlighting, snippets from [vscode-graphviz](https://github.com/joaompinto/vscode-graphviz/) with permission from the author [@joaompinto](https://github.com/joaompinto) - [#62](https://github.com/tintinweb/vscode-interactive-graphviz/issues/62)
+- new: completion provider - [#62](https://github.com/tintinweb/vscode-interactive-graphviz/issues/62) 
+- new: Allow case insensitive matching in search - [#64](https://github.com/tintinweb/vscode-interactive-graphviz/issues/64), [#65](https://github.com/tintinweb/vscode-interactive-graphviz/issues/65)
+
+<img width="1197" alt="image" src="https://user-images.githubusercontent.com/2865694/154020180-563f189a-987c-4839-a5af-fa8ba80e9aa8.png">
+
+## 0.1.0 🚀
+- new: the code is now licensed as GPLv3. Feel free to reach out if you have any questions - [#54](https://github.com/tintinweb/vscode-interactive-graphviz/issues/54)
+- new: vscode style user interface for the render window - [#41](https://github.com/tintinweb/vscode-interactive-graphviz/issues/41) (thanks @bigbug)
+- new: code refactored to typescript - [#45](https://github.com/tintinweb/vscode-interactive-graphviz/issues/45) (thanks @bigbug)
+- new: the extension is now compatible with the vscode web IDE (https://github.dev / https://vscode.dev) - [#49](https://github.com/tintinweb/vscode-interactive-graphviz/issues/49) (thanks @bigbug)
+
+  ![graphviz-web](https://user-images.githubusercontent.com/2865694/150638292-1967020e-7ad9-409d-b91f-8f7ae3598827.gif)
+
+
+- new: improved search (nodes/edges); edge multi-selection - [#51](https://github.com/tintinweb/vscode-interactive-graphviz/issues/51) (thanks @bigbug)
+- fix: overlapping toolbar - [#55](https://github.com/tintinweb/vscode-interactive-graphviz/issues/55) [#56](https://github.com/tintinweb/vscode-interactive-graphviz/issues/56) (thanks @bigbug)
+- fix: dev: npm install may fail on first checkout - [#53](https://github.com/tintinweb/vscode-interactive-graphviz/issues/53)
+- fix: svg export does not escape angle brackets in node labels [#11](https://github.com/tintinweb/vscode-interactive-graphviz/issues/11), [#61](https://github.com/tintinweb/vscode-interactive-graphviz/issues/61)
+
+## 0.0.13
+- new: show graphviz/dot error messages in preview - [#26](https://github.com/tintinweb/vscode-interactive-graphviz/issues/26) (thanks @bigbug)
+- new: configurable node highlight mode (Upstream/Downstream/Bidirectional) - [#29](https://github.com/tintinweb/vscode-interactive-graphviz/issues/29) (thanks @bigbug)
+- new: support port-based highlighting - [#25](https://github.com/tintinweb/vscode-interactive-graphviz/issues/25) (thanks @bigbug)
+- fix: inconsistent clicking behavior when highlighting node - fixes [#21](https://github.com/tintinweb/vscode-interactive-graphviz/issues/21) [#33](https://github.com/tintinweb/vscode-interactive-graphviz/issues/33) with changes of [#34](https://github.com/tintinweb/vscode-interactive-graphviz/issues/34) (thanks @bigbug)
+- fix: highlighting of multiple edges with same label - fixes [#12](https://github.com/tintinweb/vscode-interactive-graphviz/issues/12), changeset of [#30](https://github.com/tintinweb/vscode-interactive-graphviz/issues/30) (thanks @bigbug)
+- new: show rendering progress in vscode - [#36](https://github.com/tintinweb/vscode-interactive-graphviz/issues/36), [#37](https://github.com/tintinweb/vscode-interactive-graphviz/issues/37), [#42](https://github.com/tintinweb/vscode-interactive-graphviz/issues/42) (thanks @bigbug)
+- new: updated dependencies and switched to WASM - [#32](https://github.com/tintinweb/vscode-interactive-graphviz/issues/32) (thanks @bigbug)
+- new: changed UI to use VS Code's Webview UI toolkit - [#28](https://github.com/tintinweb/vscode-interactive-graphviz/issues/28) (thanks @bigbug)
+
+## 0.0.12
+- new: (API callback consumer) provide svg node attribs to callback for `onClick`, `onDblClick` events - [#18](https://github.com/tintinweb/vscode-interactive-graphviz/issues/18)
+
+## 0.0.11
+- fix: graph not rendering after vscode update 1.56.0 - [#15](https://github.com/tintinweb/vscode-interactive-graphviz/issues/15)
+
+## 0.0.10
+- optionally allow multiple graph windows per document - fixes [#13](https://github.com/tintinweb/vscode-interactive-graphviz/issues/13) (thanks @kaftejiman)
+- optionally allow customizing the render window title (default: filename of the document that's been passed in)
+ 
+## 0.0.9
+- Adopt VS Code's 'asWebviewUri' API [#7](https://github.com/tintinweb/vscode-interactive-graphviz/issues/7)
+
+## 0.0.7 - 0.0.8
+- ❗breaking change:
+  - render command renamed from `interactive-graphviz.preview.beside` to `graphviz-interactive-preview.preview.beside`
+- More control of behavior; Various fixes; Support for: render-lock, debouncing, inter-render interval; More in-code docs. [#6](https://github.com/tintinweb/vscode-interactive-graphviz/issues/6) - thanks @michkot
+
+## 0.0.6
+- fix: tracing does not work after changing graph and re-rendering it [#3](https://github.com/tintinweb/vscode-interactive-graphviz/issues/3)
+- fix: rendering for .dot files if graphviz language support is not installed. update graph for `languageId==DOT` or `filename.endsWith(DOT)`. might still not refresh for unsaved files. [#4](https://github.com/tintinweb/vscode-interactive-graphviz/issues/4)
+
+## 0.0.5
+- Add support for VSCode on Windows
+  - change toolbar style to orange (okay for dark/light themes)
+  - wait for page to load and then ask to render dot
+  - normalize all path handling to work on both os's
+
+## 0.0.4
+- allow to export the current graph as `svg` or `dot`
+
+## 0.0.1 - 0.0.3
+- Initial release

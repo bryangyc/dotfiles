@@ -1,0 +1,558 @@
+{
+	"name": "restructuredtext",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "190.4.2",
+	"publisher": "lextudio",
+	"featureFlags": {
+		"usingNewInterpreterStorage": true
+	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"homepage": "https://www.restructuredtext.net",
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Linters"
+	],
+	"icon": "images/Document_icon.png",
+	"galleryBanner": {
+		"color": "#ACD1EC",
+		"theme": "light"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vscode-restructuredtext/vscode-restructuredtext.git"
+	},
+	"bugs": "https://github.com/vscode-restructuredtext/vscode-restructuredtext/issues",
+	"activationEvents": [
+		"workspaceContains:**/*.rst",
+		"onWebviewPanel:restructuredtext.preview",
+		"onCommand:restructuredtext.features.underline.underline"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "restructuredtext",
+				"aliases": [
+					"reStructuredText",
+					"restructuredtext",
+					"ReStructured Text",
+					"reStructured Text",
+					"RST",
+					"ReST",
+					"reST"
+				],
+				"extensions": [
+					".rst",
+					".rest"
+				]
+			}
+		],
+		"snippets": [
+			{
+				"language": "restructuredtext",
+				"path": "./snippets/snippets.json"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "esbonio.insert.inlineLink",
+				"key": "alt+l",
+				"when": "editorTextFocus && editorLangId == restructuredtext"
+			},
+			{
+				"command": "esbonio.insert.link",
+				"key": "alt+shift+l",
+				"when": "editorTextFocus && editorLangId == restructuredtext"
+			},
+			{
+				"command": "restructuredtext.features.underline.underline",
+				"key": "ctrl+k ctrl+=",
+				"mac": "cmd+k cmd+=",
+				"when": "editorLangId == restructuredtext"
+			},
+			{
+				"command": "restructuredtext.features.underline.underlineReverse",
+				"key": "ctrl+k ctrl+-",
+				"mac": "cmd+k cmd+-",
+				"when": "editorLangId == restructuredtext"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onEnterKey",
+				"key": "enter",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onCtrlEnterKey",
+				"key": "ctrl+enter",
+				"mac": "cmd+enter",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onShiftEnterKey",
+				"key": "shift+enter",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onTabKey",
+				"key": "tab",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible && !editorTabMovesFocus && !inSnippetMode && !hasSnippetCompletions && !hasOtherSuggestions && !inlineSuggestionVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onShiftTabKey",
+				"key": "shift+tab",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible && !editorTabMovesFocus && !inSnippetMode && !hasSnippetCompletions && !hasOtherSuggestions"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onBackspaceKey",
+				"key": "backspace",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onMoveLineUp",
+				"key": "alt+up",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onMoveLineDown",
+				"key": "alt+down",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onCopyLineUp",
+				"win": "shift+alt+up",
+				"mac": "shift+alt+up",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onCopyLineDown",
+				"win": "shift+alt+down",
+				"mac": "shift+alt+down",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onIndentLines",
+				"key": "ctrl+]",
+				"mac": "cmd+]",
+				"when": "editorTextFocus && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "restructuredtext.editor.listEditing.onOutdentLines",
+				"key": "ctrl+[",
+				"mac": "cmd+[",
+				"when": "editorTextFocus && editorLangId == restructuredtext && !suggestWidgetVisible"
+			},
+			{
+				"command": "resttext.table.dataToTable",
+				"key": "alt+t",
+				"when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+			},
+			{
+				"command": "resttext.key.enter",
+				"key": "enter",
+				"when": "resttext.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"command": "resttext.key.shift.enter",
+				"key": "shift+enter",
+				"when": "resttext.shift.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"command": "resttext.key.alt.enter",
+				"key": "alt+enter",
+				"when": "resttext.alt.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"command": "resttext.key.tab",
+				"key": "tab",
+				"when": "resttext.tab.enabled && editorTextFocus && !inSnippetMode && !suggestWidgetVisible && editorLangId==restructuredtext && !inlineSuggestionVisible"
+			},
+			{
+				"command": "resttext.key.shift.tab",
+				"key": "shift+tab",
+				"when": "resttext.shift.tab.enabled && editorTextFocus && !inSnippetMode && !suggestWidgetVisible && editorLangId==restructuredtext"
+			}
+		],
+		"commands": [
+			{
+				"command": "esbonio.insert.link",
+				"title": "Insert Link",
+				"category": "Esbonio"
+			},
+			{
+				"command": "esbonio.insert.inlineLink",
+				"title": "Insert Inline Link",
+				"category": "Esbonio"
+			},
+			{
+				"command": "restructuredtext.workspace.isTrusted.toggle",
+				"title": "reStructuredText: Toggle Workspace Trust Flag",
+				"description": "Toggle the workspace trust flag. Workspace settings that determine tool locations are disabled by default in untrusted workspaces."
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.table.createGrid",
+				"title": "%resttext.table.createGrid.title%",
+				"when": "resttext.createGrid.enabled && editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.table.dataToTable",
+				"title": "%resttext.table.dataToTable.title%",
+				"when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.key.enter",
+				"title": "%resttext.key.enter.title%",
+				"when": "resttext.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.key.shift.enter",
+				"title": "%resttext.key.shift.enter.title%",
+				"when": "resttext.shift.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.key.alt.enter",
+				"title": "%resttext.key.alt.enter.title%",
+				"when": "resttext.alt.enter.enabled && editorTextFocus && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.key.tab",
+				"title": "%resttext.key.tab.title%",
+				"when": "resttext.tab.enabled && editorTextFocus && !inSnippetMode && !suggestWidgetVisible && editorLangId==restructuredtext"
+			},
+			{
+				"category": "reStructuredText",
+				"command": "resttext.key.shift.tab",
+				"title": "%resttext.key.shift.tab.title%",
+				"when": "resttext.shift.tab.enabled && editorTextFocus && !inSnippetMode && !suggestWidgetVisible && editorLangId==restructuredtext"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"group": "1_modification",
+					"command": "resttext.table.createGrid",
+					"when": "resttext.createGrid.enabled && editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+				},
+				{
+					"group": "1_modification",
+					"command": "resttext.table.dataToTable",
+					"when": "editorTextFocus && !editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "resttext.table.createGrid",
+					"when": "never"
+				},
+				{
+					"command": "resttext.table.dataToTable",
+					"when": "!editorHasMultipleSelections && editorHasSelection && editorLangId==restructuredtext"
+				},
+				{
+					"command": "resttext.key.enter",
+					"when": "never"
+				},
+				{
+					"command": "resttext.key.shift.enter",
+					"when": "never"
+				},
+				{
+					"command": "resttext.key.alt.enter",
+					"when": "never"
+				},
+				{
+					"command": "resttext.key.tab",
+					"when": "never"
+				},
+				{
+					"command": "resttext.key.shift.tab",
+					"when": "never"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "reStructuredText",
+				"properties": {
+					"restructuredtext.conflictingExtensions": {
+						"type": "array",
+						"default": [
+							"tht13.rst-vscode",
+							"TatsuyaNakamori.resttext",
+							"CeresNorthPole.rst-lim"
+						],
+						"description": "Extensions that might lead to conflicts.",
+						"scope": "application"
+					},
+					"restructuredtext.recommendedExtensions": {
+						"type": "array",
+						"default": [
+							"ms-python.python",
+							"trond-snekvik.simple-rst",
+							"swyddfa.esbonio"
+						],
+						"description": "Extensions that should be installed together.",
+						"scope": "application"
+					},
+					"restructuredtext.editor.sectionEditor.adornments": {
+						"type": "string",
+						"default": "#*=-^\"'`:.~_+",
+						"description": "A ordered list of adornments.",
+						"scope": "resource"
+					},
+					"restructuredtext.editor.tableEditor.disabled": {
+						"type": "boolean",
+						"default": false,
+						"description": "Flag to disable Table Editor feature.",
+						"scope": "resource"
+					},
+					"restructuredtext.editor.tableEditor.reformat.disabled": {
+						"type": "boolean",
+						"default": false,
+						"description": "Flag to disable reformat of Table Editor feature.",
+						"scope": "resource"
+					},
+					"restructuredtext.pythonRecommendation.disabled": {
+						"type": "boolean",
+						"default": false,
+						"description": "Flag to disable recommendation on Microsoft Python extension.",
+						"scope": "resource"
+					},
+					"restructuredtext.trace": {
+						"type": "string",
+						"enum": [
+							"off",
+							"verbose"
+						],
+						"default": "verbose",
+						"description": "%restructuredtext.trace.desc%",
+						"scope": "window"
+					},
+					"restructuredtext.linter.disabledLinters": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"enum": [
+								"doc8",
+								"rstcheck",
+								"rst-lint"
+							]
+						},
+						"default": [],
+						"description": "Flag to disable linters if critical issues happen.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.doc8.executablePath": {
+						"type": "string",
+						"default": null,
+						"description": "Points to the doc8 executable.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.doc8.extraArgs": {
+						"type": "array",
+						"default": [],
+						"description": "Extra arguments to doc8.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.rstcheck.executablePath": {
+						"type": "string",
+						"default": null,
+						"description": "Points to the doc8 executable.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.rstcheck.extraArgs": {
+						"type": "array",
+						"default": [],
+						"description": "Extra arguments to doc8.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.rst-lint.executablePath": {
+						"type": "string",
+						"default": null,
+						"description": "Points to the doc8 executable.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.rst-lint.extraArgs": {
+						"type": "array",
+						"default": [],
+						"description": "Extra arguments to doc8.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.run": {
+						"type": "string",
+						"enum": [
+							"onSave",
+							"onType",
+							"off"
+						],
+						"default": "onType",
+						"description": "Whether the linter is run on save or on type or disabled.",
+						"scope": "resource"
+					},
+					"restructuredtext.linter.extraArgs": {
+						"type": "array",
+						"default": [],
+						"description": "Extra arguments to doc8 or rst check.",
+						"scope": "resource",
+						"deprecationMessage": "This setting is obsolete. Please refer to https://docs.restructuredtext.net/articles/configuration.html#linter."
+					},
+					"restructuredtext.languageServer.disabled": {
+						"type": "boolean",
+						"default": false,
+						"description": "Flag to disable language server based IntelliSense if critical issues happen.",
+						"scope": "resource",
+						"deprecationMessage": "This setting is obsolete."
+					},
+					"restructuredtext.languageServer.maxNumberOfProblems": {
+						"type": "number",
+						"default": 100,
+						"description": "Controls the maximum number of problems produced by the server.",
+						"scope": "resource",
+						"deprecationMessage": "This setting is obsolete."
+					},
+					"restructuredtext.languageServer.trace.server": {
+						"type": "string",
+						"enum": [
+							"off",
+							"messages",
+							"verbose"
+						],
+						"default": "off",
+						"description": "Traces the communication between VSCode and the server.",
+						"scope": "resource",
+						"deprecationMessage": "This setting is obsolete."
+					},
+					"restructuredtext.editor.listEditing.list.indentationSize": {
+						"type": "string",
+						"enum": [
+							"adaptive",
+							"inherit"
+						],
+						"markdownEnumDescriptions": [
+							"%config.list.indentationSize.enumDescriptions.adaptive%",
+							"%config.list.indentationSize.enumDescriptions.inherit%"
+						],
+						"default": "adaptive",
+						"markdownDescription": "%config.list.indentationSize.description%",
+						"scope": "resource"
+					},
+					"restructuredtext.editor.listEditing.orderedList.autoRenumber": {
+						"type": "boolean",
+						"default": true,
+						"description": "%config.orderedList.autoRenumber.description%"
+					},
+					"restructuredtext.editor.listEditing.orderedList.marker": {
+						"type": "string",
+						"default": "ordered",
+						"description": "%config.orderedList.marker.description%",
+						"enum": [
+							"one",
+							"ordered"
+						],
+						"markdownEnumDescriptions": [
+							"%config.orderedList.marker.enumDescriptions.one%",
+							"%config.orderedList.marker.enumDescriptions.ordered%"
+						]
+					},
+					"restructuredtext.experimental": {
+						"type": "boolean",
+						"default": false,
+						"description": "Flag to enable experimental features.",
+						"scope": "resource"
+					}
+				}
+			}
+		]
+	},
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"capabilities": {
+		"virtualWorkspaces": {
+			"supported": false
+		},
+		"untrustedWorkspaces": {
+			"supported": false,
+			"description": "Building and inspecting Sphinx projects has the potential to execute arbitrary code."
+		}
+	},
+	"dependencies": {
+		"@jedithepro/system-info": "^3.0.0",
+		"async-lock": "^1.3.1",
+		"inversify": "^6.0.1",
+		"lodash.throttle": "^4.1.1",
+		"meaw": "^4.1.0",
+		"mime": "^2.4.6",
+		"node-fetch": "^2.0.0",
+		"open": "^7.3.0",
+		"reflect-metadata": "^0.1.13",
+		"semver": "^7.3.7",
+		"string-width": "^7.0.0",
+		"tslib": "^2.4.0",
+		"vscode-nls": "^4.0.0"
+	},
+	"devDependencies": {
+		"@parcel/watcher": "^2.4.0",
+		"@studio/changes": "^2.2.0",
+		"@types/glob": "^8.1.0",
+		"@types/lodash.throttle": "^4.1.4",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.63.0",
+		"@typescript-eslint/eslint-plugin": "^5.43.0",
+		"@vscode/test-electron": "^2.3.0",
+		"esbuild": "^0.15.13",
+		"eslint": "^8.34.0",
+		"eslint-plugin": "^1.0.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"glob": "^8.1.0",
+		"gts": "^3.1.1",
+		"husky": "^8.0.3",
+		"mocha": "^10.0.2",
+		"ts-loader": "^9.4.2",
+		"ts-node": "^10.7.0",
+		"typescript": "^4.4.2",
+		"vsce": "^2.15.0"
+	},
+	"main": "./dist/extension",
+	"scripts": {
+		"vscode:prepublish": "yarn compile:release",
+		"compile": "node ./src/esbuild-src",
+		"compile:release": "node ./src/esbuild-src --minify",
+		"watch": "node ./src/esbuild-src --watch",
+		"pretest": "yarn compile",
+		"test": "node ./out/test/runTest.js",
+		"dist:stable": "yarn install && vsce package",
+		"dist": "yarn install && vsce package --pre-release",
+		"lint": "gts lint --verbose",
+		"clean": "gts clean",
+		"fix": "gts fix",
+		"prepare": "yarn compile",
+		"posttest": "yarn lint"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn run fix"
+		}
+	},
+	"__metadata": {
+		"id": "a5a4d637-aa11-4bd1-b404-9f10390f8d4b",
+		"publisherId": "4997bcf8-8791-4e20-b07f-68f1d8465c38",
+		"publisherDisplayName": "LeXtudio Inc.",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1725951266191,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
