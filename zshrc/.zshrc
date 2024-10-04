@@ -8,8 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# for mac os
-source /Users/bryan/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -17,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -140,11 +138,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-# Created by `pipx` on 2024-05-30 01:47:00
-# export PATH="$PATH:/Users/bryan/.local/bin"
-# if [ -f "/Users/bryan/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/bryan/.config/fabric/fabric-bootstrap.inc"; fiexport PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/bryan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
