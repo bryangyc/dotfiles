@@ -8,6 +8,7 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
+config.enable_wayland = false
 
 config.font = wezterm.font("MesloLGS NF")
 -- and finally, return the configuration to wezterm
