@@ -10,5 +10,6 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Mocha"
 config.enable_wayland = false
 
+config.font = wezterm.font("MesloLGS NF")
 -- and finally, return the configuration to wezterm
 return config

@@ -8,8 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# for mac os
-source /Users/bryan/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -140,13 +138,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-<<<<<<< HEAD
-=======
-
-
-# Created by `pipx` on 2024-05-30 01:47:00
-# export PATH="$PATH:/Users/bryan/.local/bin"
-# if [ -f "/Users/bryan/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/bryan/.config/fabric/fabric-bootstrap.inc"; fiexport PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/bryan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
