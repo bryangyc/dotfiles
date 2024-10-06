@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # for mac os
-source /Users/bryan/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source /Users/bryan/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -140,3 +140,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
