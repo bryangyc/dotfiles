@@ -20,27 +20,27 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities
-      })
-      lspconfig.tsserver.setup({
-        capabilities = capabilities
-      })
-      lspconfig.jsonls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.bashls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.yamlls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.solargraph.setup({
-        capabilities = capabilities
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities
-      })
+      -- lspconfig.tailwindcss.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.tsserver.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.jsonls.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.bashls.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.yamlls.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.solargraph.setup({
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.html.setup({
+      --   capabilities = capabilities
+      -- })
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
