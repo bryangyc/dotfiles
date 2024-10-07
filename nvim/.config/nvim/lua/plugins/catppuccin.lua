@@ -46,6 +46,8 @@
            nvimtree = true,
            treesitter = true,
            notify = false,
+           which_key = true,
+
            mini = {
              enabled = true,
              indentscope_color = "",
