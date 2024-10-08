@@ -10,8 +10,10 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Mocha"
 config.enable_wayland = false
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.window_decorations = "RESIZE"
+config.font = wezterm.font("MesloLGS NF")
+config.font_size = 16
 
 -- and finally, return the configuration to wezterm
 return config
