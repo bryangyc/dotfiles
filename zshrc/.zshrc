@@ -142,7 +142,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-# for mac
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# if condition for macos and linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+fi

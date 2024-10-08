@@ -13,7 +13,7 @@ config.enable_wayland = false
 config.window_background_opacity = 0.8
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("MesloLGS NF")
-config.font_size = 16
+config.font_size = 14
 
 -- and finally, return the configuration to wezterm
 return config
