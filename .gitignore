@@ -1,2 +1,7 @@
 # mac os ds store
 .DS_Store
+
+# git files
+.gitignore
+.git
+
