@@ -80,7 +80,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,8 +144,30 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # if condition for macos and linux
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-fi
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# elif [[ "$OSTYPE" == "darwin"* ]]; then
+#   source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# fi
+
+eval "$(starship init zsh)"
+
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+bindkey -e
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
+# shell integration
+source <(fzf --zsh)
+
