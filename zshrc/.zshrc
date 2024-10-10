@@ -179,3 +179,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+. "$HOME/.cargo/env"
