@@ -180,4 +180,4 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
