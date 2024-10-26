@@ -180,4 +180,5 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# . "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
+eval "$(uv generate-shell-completion zsh)"

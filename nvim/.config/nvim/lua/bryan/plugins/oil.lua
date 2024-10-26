@@ -3,6 +3,11 @@ return {
     config = function()
         local oil = require("oil")
         oil.setup()
-        vim.keymap.set("n", "-", oil.toggle_float, {})
+        vim.keymap.set(
+            "n",
+            "<leader>n",
+            oil.toggle_float,
+            { desc = "Toggle oil float" }
+        )
     end,
 }
