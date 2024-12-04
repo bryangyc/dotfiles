@@ -15,5 +15,11 @@ config.window_decorations = "RESIZE"
 config.font = wezterm.font("MesloLGS NF")
 config.font_size = 14
 
+-- config.keys = {
+-- 	{ key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
+-- 	{ key = "c", mods = "CTRL", action = wezterm.action({ CopyTo = "Clipboard" }) },
+-- 	-- {key="Insert", mods="SHIFT", action=wezterm.action{PasteFrom="Clipboard"}},
+-- }
+
 -- and finally, return the configuration to wezterm
 return config
