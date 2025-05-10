@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <!-- Settings menu item -->
+    <child>
+      <object class="GtkMenuItem" id="settings">
+        <property name="label">Settings</property>
+        <signal name="activate" handler="settings_action"/>
+      </object>
+    </child>
+
+    <!-- Themes menu item -->
+    <child>
+      <object class="GtkMenuItem" id="themes">
+        <property name="label">Themes</property>
+        <signal name="activate" handler="themes_action"/>
+      </object>
+    </child>
+
+    <!-- Separator -->
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+    </child>
+
+    <!-- Lock screen menu item -->
+    <child>
+      <object class="GtkMenuItem" id="lock">
+        <property name="label">Lock</property>
+        <signal name="activate" handler="lock_action"/>
+      </object>
+    </child>
+
+    <!-- Reboot menu item -->
+    <child>
+      <object class="GtkMenuItem" id="reboot">
+        <property name="label">Reboot</property>
+        <signal name="activate" handler="reboot_action"/>
+      </object>
+    </child>
+
+    <!-- Shutdown menu item -->
+    <child>
+      <object class="GtkMenuItem" id="shutdown">
+        <property name="label">Shutdown</property>
+        <signal name="activate" handler="shutdown_action"/>
+      </object>
+    </child>
+  </object>
+</interface>
