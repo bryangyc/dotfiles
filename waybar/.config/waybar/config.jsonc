@@ -37,7 +37,7 @@
   "clock": {
     "timezone": "Asia/Singapore",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y - %I:%M:%S %p}"
+    "format": "{:%d/%m/%Y - %I:%M %p}"
   },
   "network": {
     "format-wifi": "󰤢 {bandwidthDownBits}",
