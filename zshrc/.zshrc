@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -129,21 +129,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/Users/bryan/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/bryan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/bryan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/bryan/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/bryan/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # if condition for macos and linux
 # if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 #   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -151,23 +136,23 @@ unset __conda_setup
 #   source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # fi
 
-eval "$(starship init zsh)"
-
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-
-bindkey -e
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
+# eval "$(starship init zsh)"
+#
+# zstyle ':completion:*' menu no
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+#
+# bindkey -e
+# # History
+# HISTSIZE=5000
+# HISTFILE=~/.zsh_history
+# SAVEHIST=$HISTSIZE
+# HISTDUP=erase
+# setopt appendhistory
+# setopt sharehistory
+# setopt hist_ignore_space
+# setopt hist_ignore_all_dups
+# setopt hist_save_no_dups
+# setopt hist_find_no_dups
 
 # shell integration
 source <(fzf --zsh)
