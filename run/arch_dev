@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+paru -S wezterm
+paru -S wlogout-git
