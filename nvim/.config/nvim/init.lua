@@ -407,6 +407,7 @@ require('lazy').setup({
         pickers = {
           find_files = {
             follow = true,
+            hidden = true,
           },
         },
         extensions = {
