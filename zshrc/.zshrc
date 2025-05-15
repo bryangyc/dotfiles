@@ -125,10 +125,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/bryan/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
 # if condition for macos and linux
 # if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 #   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -155,7 +151,7 @@ export PATH="/Users/bryan/.rd/bin:$PATH"
 # setopt hist_find_no_dups
 
 # shell integration
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -166,5 +162,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-. "$HOME/.cargo/env"
-eval "$(uv generate-shell-completion zsh)"
+
+export PATH="$PATH:/opt/nvim/"
+
+. "$HOME/.local/bin/env"
