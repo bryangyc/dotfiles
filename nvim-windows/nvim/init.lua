@@ -162,6 +162,14 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+
+
+-- Added for windows usage
+vim.opt.shell = "cmd.exe"
+vim.opt.shellcmdflag = "/c"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
