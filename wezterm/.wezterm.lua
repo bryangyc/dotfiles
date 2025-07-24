@@ -1,29 +1,57 @@
--- Pull in the wezterm API
+
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
+local act = wezterm.action
+local mod = {}
 
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_domain = "WSL:Ubuntu"
-end
+config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe', '-l' }
+-- if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+-- 	config.default_domain = "WSL:Ubuntu"
+-- end
 
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
 config.color_scheme = "Tokyo Night"
-config.enable_wayland = false
+-- config.window_background_opacity = 0.8
 
-config.window_background_opacity = 0.8
-config.window_decorations = "RESIZE"
 config.font = wezterm.font("MesloLGS NF")
-config.font_size = 14
+config.font_size = 12
 
--- config.keys = {
--- 	{ key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
--- 	{ key = "c", mods = "CTRL", action = wezterm.action({ CopyTo = "Clipboard" }) },
--- 	-- {key="Insert", mods="SHIFT", action=wezterm.action{PasteFrom="Clipboard"}},
--- }
+config.warn_about_missing_glyphs = false
 
--- and finally, return the configuration to wezterm
+
+mod.SUPER = 'ALT'
+mod.SUPER_REV = 'ALT|CTRL'
+
+local keys = {
+    { key = 'c', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
+    { key = 'v', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
+
+    -- tabs --
+    { key = 't', mods = mod.SUPER, action= act.SpawnTab('DefaultDomain')},
+    { key = 'w', mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = true}) },
+
+    -- split panes
+    { key = [[-]], mods = mod.SUPER, action = act.SplitVertical({ domain = 'CurrentPaneDomain' })},
+    { key = [[\]], mods = mod.SUPER, action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' })},
+    -- close panes
+    { key = 'w', mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = true })},
+
+
+    -- panes navigation
+    { key = 'k', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up')},
+    { key = 'j', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down')},
+    { key = 'h', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left')},
+    { key = 'l', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right')},
+
+
+    -- scroll panes
+    { key = 'u', mods = mod.SUPER, action = act.ScrollByLine(-5) },
+    { key = 'd', mods = mod.SUPER, action = act.ScrollByLine(5) },
+    { key = 'PageUp', mods = 'NONE', action = act.ScrollByPage(-0.75)},
+    { key = 'PageDown', mods = 'NONE', action = act.ScrollByPage(0.75)},
+
+}
+
+config.keys = keys
+
 return config
