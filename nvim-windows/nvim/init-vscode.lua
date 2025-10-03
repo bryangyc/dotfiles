@@ -74,6 +74,15 @@ vim.keymap.set('n', 'grt', function()
   vim.fn.VSCodeNotify('editor.action.goToTypeDefinition')
 end, { desc = 'LSP: Type Definition (VSCode)' })
 
+-- Tab navigation with Alt+[ and Alt+]
+vim.keymap.set('n', '<A-[>', function()
+  vim.fn.VSCodeNotify('workbench.action.previousEditorInGroup')
+end, { desc = 'Go to previous tab (VSCode)' })
+
+vim.keymap.set('n', '<A-]>', function()
+  vim.fn.VSCodeNotify('workbench.action.nextEditorInGroup')
+end, { desc = 'Go to next tab (VSCode)' })
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
