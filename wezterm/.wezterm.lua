@@ -50,28 +50,28 @@ local keys = {
 
 
     -- panes navigation
-    -- { key = 'k', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up')},
-    -- { key = 'j', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down')},
-    -- { key = 'h', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left')},
-    -- { key = 'l', mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right')},
+    { key = 'k', mods = mod.SUPER, action = act.ActivatePaneDirection('Up')},
+    { key = 'j', mods = mod.SUPER, action = act.ActivatePaneDirection('Down')},
+    { key = 'h', mods = mod.SUPER, action = act.ActivatePaneDirection('Left')},
+    { key = 'l', mods = mod.SUPER, action = act.ActivatePaneDirection('Right')},
 
-  -- panes navigation (CTRL only, seamless with Neovim)
-    { key = 'h', mods = 'CTRL', action = act.Multiple {
-	act.ActivatePaneDirection 'Left',
-	act.SendKey { key = 'h', mods = 'CTRL' },
-    }},
-    { key = 'j', mods = 'CTRL', action = act.Multiple {
-	act.ActivatePaneDirection 'Down',
-	act.SendKey { key = 'j', mods = 'CTRL' },
-    }},
-    { key = 'k', mods = 'CTRL', action = act.Multiple {
-	act.ActivatePaneDirection 'Up',
-	act.SendKey { key = 'k', mods = 'CTRL' },
-    }},
-    { key = 'l', mods = 'CTRL', action = act.Multiple {
-	act.ActivatePaneDirection 'Right',
-	act.SendKey { key = 'l', mods = 'CTRL' },
-    }},
+	--  -- panes navigation (CTRL only, seamless with Neovim)
+	--    { key = 'h', mods = 'CTRL', action = act.Multiple {
+	-- act.ActivatePaneDirection 'Left',
+	-- act.SendKey { key = 'h', mods = 'CTRL' },
+	--    }},
+	--    { key = 'j', mods = 'CTRL', action = act.Multiple {
+	-- act.ActivatePaneDirection 'Down',
+	-- act.SendKey { key = 'j', mods = 'CTRL' },
+	--    }},
+	--    { key = 'k', mods = 'CTRL', action = act.Multiple {
+	-- act.ActivatePaneDirection 'Up',
+	-- act.SendKey { key = 'k', mods = 'CTRL' },
+	--    }},
+	--    { key = 'l', mods = 'CTRL', action = act.Multiple {
+	-- act.ActivatePaneDirection 'Right',
+	-- act.SendKey { key = 'l', mods = 'CTRL' },
+	--    }},
 
     -- scroll panes
     { key = 'u', mods = mod.SUPER, action = act.ScrollByLine(-5) },
