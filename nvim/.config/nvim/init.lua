@@ -928,7 +928,7 @@ require('lazy').setup({
           palette_overrides = {},
           overrides = {},
           dim_inactive = false,
-          transparent_mode = false,
+          transparent_mode = true,
 
       }
       ---@diagnostic disable-next-line: missing-fields
@@ -1045,7 +1045,7 @@ require('lazy').setup({
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   -- require 'kickstart.plugins.harpoon',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
