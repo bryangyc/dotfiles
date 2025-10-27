@@ -37,6 +37,12 @@ blinking = "Always"
 [selection]
 save_to_clipboard = true
 
+[keyboard]
+bindings = [
+{ key = "Insert", mods = "Shift", action = "Paste" },
+{ key = "Insert", mods = "Control", action = "Copy" }
+]
+
 [colors.primary]
 background = "0x282828"
 foreground = "0xebdbb2"
