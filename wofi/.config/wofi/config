@@ -1,0 +1,7 @@
+show=drun
+prompt=Run:
+width=30%
+height=50%
+location=center
+term=foot
+no_actions=true

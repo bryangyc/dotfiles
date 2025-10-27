@@ -13,7 +13,7 @@ else
 end
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
--- config.window_background_opacity = 0.8
+config.window_background_opacity = 0.8
 
 config.font = wezterm.font("MesloLGS NF")
 config.font_size = 11
