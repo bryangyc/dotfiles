@@ -164,8 +164,7 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 [python]
 symbol = ""
 style = "bg:teal"
-# pyenv_version_name = true
-format = '[[ $symbol ( $virtualenv) | ( $version )](fg:base bg:teal)]($style)'
+format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [docker_context]
 symbol = ""
@@ -173,8 +172,9 @@ style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [time]
-disabled = true
-time_format = "%R"
+disabled = false
+time_format = "%I:%M %p"
+# time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
